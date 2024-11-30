@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url("../public/colors.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+@media (max-width: 1030px) {
+  body {
+    background-size: auto;
+  }
+}
+
+.login-body {
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+.nav {
+  display: flex;
+}
