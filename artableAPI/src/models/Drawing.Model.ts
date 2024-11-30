@@ -1,7 +1,7 @@
 import { timeStamp } from "console";
-import { Schema, Mongoose } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const schema = mongoose.Schema();
+const schema = Schema;
 
 const drawingSchema = new schema(
   {
@@ -18,9 +18,9 @@ const drawingSchema = new schema(
       required: true,
     },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
-const Drawing = new mongoose.Model("drawing", drawingSchema);
+const Drawing = mongoose.model("Drawing", drawingSchema);
 
 module.exports = Drawing;

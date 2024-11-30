@@ -1,6 +1,10 @@
 import { Request, Response } from "express";
+import path from "path";
 const User = require("../models/User.Model");
 const jwt = require("jsonwebtoken");
+require("dotenv").config({
+  path: "../.env",
+});
 
 const createToken = (_id: string) => {
   return jwt.sign({ _id }, process.env.SECRET_TOKEN, { expiresIn: "3d" });

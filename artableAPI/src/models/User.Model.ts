@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose, { Schema } from "mongoose";
 const bcrypt = require("bcrypt");
 const validator = require("validator");
 
-const schema = mongoose.Schema();
+const schema = Schema;
 
 const userSchema = new schema(
   {
@@ -24,7 +24,7 @@ const userSchema = new schema(
       required: true,
     },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
 // Static signup method
@@ -79,6 +79,6 @@ userSchema.statics.login = async function (email: string, password: string) {
   return user;
 };
 
-const UserModel = new mongoose.model("user", userSchema);
+const UserModel = mongoose.model("user", userSchema);
 
 module.exports = UserModel;
